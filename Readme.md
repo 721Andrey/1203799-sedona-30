@@ -1,7 +1,8 @@
 # Личный проект «Седона»
 
 * Студент: [Андрей Липовый](https://up.htmlacademy.ru/htmlcss/30/user/1203799).
-* Наставник: `Неизвестно`.
+* Наставник: [Максим Корелин]
+(https://up.htmlacademy.ru/profile/maxzbest).
 
 ---
 
