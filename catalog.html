@@ -12,21 +12,15 @@
 
         <nav>
             <a>
-                <img src="img/index-logo.svg" width="458" height="214" alt="Логотип городка Седона">
-                <!--тут в лого 3 картинки будет или одна общая или только средняя SEDONA ?-->
-              </a>
+                <img src="img/welcome.svg" width="458" height="352" alt="Логотип городка Седона">
+            </a>
             <ul>
                 <li><a href="blank.html">Информация</a></li>
                 <li><a href="blank.html">Фото и видео</a></li>
+                <li><a href="index.html"><img src="img/mini-logo.svg" width="138" height="70" alt="Логотип сайта городка Седона"></a></li>
                 <li><a href="blank.html">Карта штата</a></li>
                 <li><a href="catalog.html">Гостиницы</a></li>
-              </ul>
-
-              <!--доделано
-                <a href="index.html">
-                    <img src="img/mini-logo.svg" width="138" height="70" alt="Логотип сайта городка Седона">
-                </a>
-                -->
+            </ul>
         </nav>
 
     </header>
@@ -34,6 +28,7 @@
     <main>
         <section>
             <h2>Фильтр жилья</h2>
+            <form method="get" action="https://echo.htmlacademy.ru">
                 <fieldset>
                     <legend>Инфраструктура:</legend>
                     <ul>
@@ -72,11 +67,17 @@
 
                 <fieldset>
                     <legend>Стоимость в сутки (р):</legend>
+                        <label>от<input type="text" value="0"></label>
+                        <label>до<input type="text" value="3000"></label>
+                    <!--ползунок-->
                 </fieldset>
 
                 <form method="get" action="https://echo.htmlacademy.ru"></form>
                 <input type="submit" value="Показать">
 
+                <!-- или так?
+                <button type="submit">Показать</button>
+                -->
             </form>
         </section>
 
@@ -110,8 +111,11 @@
                         <button type="button">Забронировать</button>
 
                         <h4>Рейтинг</h4>
+                        <p>Рейтинг</p>
                         <!--4 звездочки-->
                         <p>Рейтинг: 8,5</p>
+                        <span>Рейтинг: 8,5</span>
+                        <!-- или Рейтинг сделать h4, а Рейтинг: 8,5 параграфом?-->
                 </li>
 
                 <li>
@@ -131,8 +135,10 @@
                         <button type="button">Забронировать</button>
 
                         <h4>Рейтинг</h4>
+                        <p>Рейтинг</p>
                         <!--3 звездочки-->
                         <p>Рейтинг: 8,9</p>
+                        <span>Рейтинг: 8,9</span>
                 </li>
 
                 <li>
@@ -152,8 +158,10 @@
                         <button type="button">Забронировать</button>
 
                         <h4>Рейтинг</h4>
+                        <p>Рейтинг</p>
                         <!--2 звездочки-->
                         <p>Рейтинг: 9,2</p>
+                        <span>Рейтинг: 9,2</span>
                 </li>
             </ul>
         </section>
@@ -165,8 +173,9 @@
     <footer>
         <section>
             <h3>Контактная информация</h3>
-                <p>#visitSEDONA</p>
-                <p>ТЕЛ: +7(495) 666-01-66</p>
+                <p>#visitSEDONA<br>
+                <a href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
+                </p>
         </section>
 
         <section>
