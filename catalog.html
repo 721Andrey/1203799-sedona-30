@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Седона</title>
+  <link rel="icon" href="favicon.ico"><link rel="icon" href="favicon/icon.svg" type="image/svg+×ml">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-
-
     <header>
-
         <nav>
             <a>
                 <img src="img/welcome.svg" width="458" height="352" alt="Логотип городка Седона">
@@ -22,11 +27,13 @@
                 <li><a href="catalog.html">Гостиницы</a></li>
             </ul>
         </nav>
-
     </header>
 
     <main>
         <section>
+            <p>
+                <img src="img/background/background-photo-catalog.jpg" width="1200" height="217" alt="Красивый вид на горы городка Седона">
+            </p>
             <h2>Фильтр жилья</h2>
             <form method="get" action="https://echo.htmlacademy.ru">
                 <fieldset>
@@ -67,17 +74,13 @@
 
                 <fieldset>
                     <legend>Стоимость в сутки (р):</legend>
-                        <label>от<input type="text" value="0"></label>
-                        <label>до<input type="text" value="3000"></label>
-                    <!--ползунок-->
+                        <label>от<input type="text" value="0" disabled></label>
+                        <label>до<input type="text" value="3000" disabled></label>
+                    <!--ползунок
+                     <input type="range" name="range" min="1" max="3000" step="1" value="2400" />
+                    -->
                 </fieldset>
-
-                <form method="get" action="https://echo.htmlacademy.ru"></form>
                 <input type="submit" value="Показать">
-
-                <!-- или так?
-                <button type="submit">Показать</button>
-                -->
             </form>
         </section>
 
@@ -89,16 +92,16 @@
                 <li>По цене</li>
                 <li>По типу</li>
                 <li>По рейтингу</li>
-                <!--вниз-вверх-->
+                <!--стрелки вниз-вверх-->
             </ul>
         </section>
-        <section>
+        <article>
             <ul>
                 <li>
                     <a href="blank.html"></a>
                         <h3>Amara Resort & Spa</h3>
                         <p>
-                        <img src="img/hotels/Layer 21.jpg" width="135" height="90" alt="гостиница Amara Resort & Spa">
+                        <img src="img/hotels/Layer 21.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
                         </p>
                         <p>
                             Гостинница
@@ -110,12 +113,9 @@
                         <a href="blank.html">Подробнее</a>
                         <button type="button">Забронировать</button>
 
-                        <h4>Рейтинг</h4>
                         <p>Рейтинг</p>
-                        <!--4 звездочки-->
-                        <p>Рейтинг: 8,5</p>
+                        <!--4 звезды-->
                         <span>Рейтинг: 8,5</span>
-                        <!-- или Рейтинг сделать h4, а Рейтинг: 8,5 параграфом?-->
                 </li>
 
                 <li>
@@ -134,10 +134,8 @@
                         <a href="blank.html">Подробнее</a>
                         <button type="button">Забронировать</button>
 
-                        <h4>Рейтинг</h4>
                         <p>Рейтинг</p>
-                        <!--3 звездочки-->
-                        <p>Рейтинг: 8,9</p>
+                        <!--3 звезды-->
                         <span>Рейтинг: 8,9</span>
                 </li>
 
@@ -157,17 +155,12 @@
                         <a href="blank.html">Подробнее</a>
                         <button type="button">Забронировать</button>
 
-                        <h4>Рейтинг</h4>
                         <p>Рейтинг</p>
-                        <!--2 звездочки-->
-                        <p>Рейтинг: 9,2</p>
+                        <!--2 звезды-->
                         <span>Рейтинг: 9,2</span>
                 </li>
             </ul>
-        </section>
-
-
-
+        </article>
     </main>
 
     <footer>
@@ -180,20 +173,25 @@
 
         <section>
             <h3>Мы в соцсетях</h3>
-            <ul>
-                <li>
-                  <a href="#">Твиттер</a>
-                </li>
-                <li>
-                  <a href="#">Фейсбук</a>
-                </li>
-                <li>
-                  <a href="#">Ютуб</a>
-                </li>
-              </ul>
-        </section>
+            <div>
+                <div>
+                    <a href="blank.html" alt="Ссылка на страницу в Twitter">Твиттер
+                        <img src="img/icons/twitter.svg" width="17" height="16" alt=""></a>
+                </div>
+
+                <div>
+                    <a href="blank.html" alt="Ссылка на страницу в Facebook">Фейсбук
+                        <img src="img/icons/fb.svg" width="12" height="22" alt=""></a>
+                </div>
+
+                <div>
+                    <a href="blank.html" alt="Ссылка на страницу в YouTube">Ютуб
+                        <img src="img/icons/youtube.svg" width="20" height="16" alt=""></a>
+                </div>
+            </div>
 
         <section>
+            <img src="img/icons/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTML Academy">
             <p>
                 Website by
                 <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a>
