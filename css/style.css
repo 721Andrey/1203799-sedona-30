@@ -1,0 +1,437 @@
+/*fonts*/
+
+@font-face {
+    font-family: "PT Sans";
+    src: url("../fonts/PTSans.woff2") format("woff2"),
+        url("../fonts/PTSans.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PT Sans";
+    src: url("../fonts/PTSans-Bold.woff2") format("woff2"),
+        url("../fonts/PTSans-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*Variables*/
+
+:root {
+    --basic-black: #000000;
+    --basic-white: #FFFFFF;
+    --basic-blue: #81B3D2;
+    --basic-brown: #766357;
+    --basic-light: #888888;
+    --basic-text: #333333;
+    --basic-arrow: #CACACA;
+    --basic-input: #F2F2F2;
+    --basic-blue-active: #669EC0;
+    --hover-blue-pressing: #5496BD;
+    --basic-brown-active: #604E43;
+    --hover-brown-pressing: #503E33;
+
+    --special-check: #6A6A6A;
+    --special-slider: #ABABAB;
+    --special-restangle: #A9A9A9;
+    --special-pale: #EEEEEE;
+    --special-reting: #666666;
+    --special-cal: #EBEBEB;
+
+    --logo-dark: #231F20;
+    --logo-light: #BDBBBC;
+}
+
+/*Global*/
+
+body {
+    min-width: 1200px;
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: normal;
+    color: var(--basic-text);
+    text-transform: uppercase;
+    background-color: var(--basic-light);
+
+}
+
+body.page-body {
+    background-image: url("../img/background/background-photo-index.jpg"), url("../img/background/shape.svg");
+    background-color: var(--basic-light);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+body.second-page-body {
+    background-image: url(../img/background/background-photo-catalog.jpg);
+    background-color: var(--basic-light);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Main navigation */
+
+.main-navigation {
+    background-color: transparent;
+    color: var(--basic-black);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.site-navigation {
+    list-style: none;
+    background-color: var(--basic-white);
+}
+
+.site-navigation a {
+    color: var(--basic-black);
+}
+
+.site-navigation:hover a{ /*наведение*/
+    color: var(--basic-blue);
+}
+
+.site-navigation:active a{ /*активный*/
+    color: var(--basic-brown);
+}
+
+/*Slogan*/
+
+.slogan {
+    color: var(--basic-black);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.slogan-causes {
+    background-color: var(--basic-white);
+    text-align: center;
+    line-height: 26px;
+}
+/*Causes*/
+
+.causes-list, .causes-item-list {
+    list-style: none;
+}
+
+.causes-item-list {
+    background-color: var(--basic-white);
+}
+
+.causes-subtitle-w {
+    color: var(--basic-white);
+}
+
+h4 {
+    color: var(--basic-black);
+    font-size: 21px;
+    line-height: 21px;
+}
+
+.causes-columns1 {
+    background-image: url(../img/images/image-1.jpg);
+}
+
+.causes-columns2 {
+    background-image: url(../img/images/image-2.jpg);
+}
+
+.causes-columns3 {
+    background-color: var(--special-pale);
+}
+
+.causes-columns1,
+.causes-columns2 {
+    color: var(--basic-white);
+    background-color: var(--basic-blue);
+    width: 800px;
+    height: 256px;
+    background-repeat: no-repeat;
+}
+
+.causes-item-item:first-child {
+    background-image: url(../img/icons/icon-1.svg);
+    background-repeat: no-repeat;
+}
+
+.causes-item-item:nth-child(2) {
+    background-image: url(../img/icons/icon-3.svg);
+    background-repeat: no-repeat;
+}
+
+.causes-item-item:last-child {
+    background-image: url(../img/icons/icon-2.svg);
+    background-repeat: no-repeat;
+}
+
+.search-head {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 24px;
+}
+
+/*Search*/
+
+.search-head-info {
+    color: var(--basic-black);
+    text-align: center;
+    background-color: var(--basic-white);
+}
+.search-button,
+.find-button {
+    color: var(--basic-white);
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+    text-transform: uppercase;
+    border: none;
+}
+
+.search-item input {
+    background-color: var(--basic-input);
+    border: none;
+    font: inherit;
+    text-transform: uppercase;
+}
+
+.search-item label,
+.search-item input {
+    color: var(--basic-black);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.search-item:hover input {
+    background-color: var(--special-cal);
+}
+
+.search-item:active input {
+    background-color: var(--basic-white);
+}
+
+.search-button {
+    background-color: var(--basic-brown);
+}
+.search-button:hover { /*наведение*/
+    background-color: var(--basic-brown-active);
+}
+.search-button:focus {
+    background-color: var(--hover-brown-pressing);
+}
+
+.search-search-form {
+    background-color: var(--basic-white);
+}
+
+.find-button {
+    background-color: var(--basic-blue);
+}
+
+.find-button:hover { /*наведение*/
+    background-color: var(--basic-blue-active);
+}
+
+.find-button:active { /*нажатие*/
+    background-color: var(--hover-blue-pressing);
+}
+
+/*Footer*/
+/* Contacts */
+
+.main-footer {
+    background-color: var(--basic-white);
+}
+
+.footer-contacts,
+.footer-copyright p {
+    color: var(--basic-black);
+}
+
+.footer-phone,
+.footer-contacts p {
+    font-size: 21px;
+    line-height: 26px;
+}
+
+.footer-phone {
+    color: inherit;
+}
+
+.footer-button {
+    color: var(--logo-dark);
+}
+
+.footer-social {
+    text-align: center;
+}
+
+.twitter,
+.fasebook,
+.youtube {
+    background-color: var(--basic-blue);
+}
+
+/* Social button */
+
+.social-button {
+    color: inherit;
+}
+
+.social-button:hover { /*наведение*/
+    background-color: var(--basic-blue-active);
+}
+.social-button:focus { /*нажатие*/
+    background-color: var(--hover-blue-pressing);
+}
+
+.footer-button:hover { /*наведение чета не работает*/
+    color: var(--basic-blue);
+}
+
+.footer-button:focus { /*нажатие чета не работает*/
+    color: var(--logo-light);
+}
+
+/*Catalog*/
+
+.site-navigation-link-hotel {
+    color: var(--basic-brown); /*шоб оно работало, когда находишься на этой странице*/
+}
+
+.filters,
+.filter-option label,
+.price legend,
+label {
+    color: var(--basic-white);
+    /*background-color: var(--basic-white);*/
+}
+
+.filter-subtitle,
+.price legend {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.filter-subtitle-list li,
+.found-list li {
+    list-style-type: none;
+    font-weight: inherit; /*пункты списка бассейн, парковка т д тянет жирный шрифт, не могу найти чо*/
+}
+
+.filter-subtitle-list:disabled {
+    color: var(--special-check);
+}
+
+.result-container,
+.found {
+    background-color: var(--basic-white);
+}
+
+.btn,
+.price input {
+    text-transform: uppercase;
+    color: var(--basic-white);
+    border-color: var(--basic-white);
+}
+
+.btn:focus { /*нажатие*/
+    color: var(--basic-black);
+    background-color: var(--basic-white);
+}
+
+.result-item-title,
+.found-item-house {
+    color: var(--basic-black);
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+}
+
+.result-item-list1 {
+    color: var(--basic-blue);
+}
+
+.result-item-list2,
+.result-item-list3 {
+    color: var(--basic-black);
+    opacity: 0.3;
+    border-bottom: 1px dashed #81B3D2;
+}
+
+.result-item-list3:hover {
+    color: var(--basic-blue);
+    opacity: 1;
+}
+
+.result-item-list3:active {
+    color: var(--basic-black);
+}
+
+.result-list li {
+    list-style-type: none;
+}
+
+/*Гостинницы*/
+
+.found-item-house:hover {
+    color: var(--basic-blue);
+}
+.found-item-house:active {
+    color: var(--basic-black);
+    opacity: 0.3;
+}
+
+/*Кнопки гостинниц*/
+
+.details, .reserve {
+    color: var(--basic-white);
+    font-weight: bold;
+}
+
+.details {
+    background-color: var(--basic-blue);
+}
+
+.details:hover {
+    background-color: var(--basic-blue-active);
+}
+
+.details:active {
+    background-color: var(--hover-blue-pressing);
+}
+
+.reserve {
+    background-color: var(--basic-brown);
+}
+
+.reserve:hover {
+    background-color: var(--basic-brown-active);
+}
+
+.reserve:active {
+    background-color: var(--hover-brown-pressing);
+}
+
+/*Рейтинг*/
+
+.found-item-rating {
+    background-color: var(--basic-input);
+    color: var(--special-reting);
+}
