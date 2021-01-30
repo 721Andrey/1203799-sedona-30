@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Седона</title>
-  <link rel="icon" href="favicon.ico"><link rel="icon" href="favicon/icon.svg" type="image/svg+×ml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap&subset=cyrillic,latin">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="favicon/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -13,33 +17,32 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
-    <header>
-        <nav>
-            <a>
+<body class="second-page-body">
+    <header class="main-header">
+        <nav class="main-navigation">
+            <a class="main-header-logo">
                 <img src="img/welcome.svg" width="458" height="352" alt="Логотип городка Седона">
             </a>
-            <ul>
-                <li><a href="blank.html">Информация</a></li>
-                <li><a href="blank.html">Фото и видео</a></li>
-                <li><a href="index.html"><img src="img/mini-logo.svg" width="138" height="70" alt="Логотип сайта городка Седона"></a></li>
-                <li><a href="blank.html">Карта штата</a></li>
-                <li><a href="catalog.html">Гостиницы</a></li>
+            <ul class="site-navigation">
+                <li><a class="site-navigation-link" href="blank.html">Информация</a></li>
+                <li><a class="site-navigation-link" href="blank.html">Фото и видео</a></li>
+                <li><a class="site-navigation-link" href="index.html"><img src="img/mini-logo.svg" width="138" height="70" alt="Логотип сайта городка Седона"></a></li>
+                <li><a class="site-navigation-link" href="blank.html">Карта штата</a></li>
+                <li><a class="site-navigation-link-hotel" href="catalog.html">Гостиницы</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section>
-            <!--декоративное изо img/background/background-photo-catalog.jpg"-->
+    <main class="catalog-container">
+        <section class="filters">
             <h2>Фильтр жилья</h2>
-            <form method="get" action="https://echo.htmlacademy.ru">
-                <fieldset>
-                    <legend>Инфраструктура:</legend>
-                    <ul>
+            <form class="filter" method="get" action="https://echo.htmlacademy.ru">
+                <fieldset class="infrastructure">
+                    <legend class="filter-subtitle">Инфраструктура:</legend>
+                    <ul class="filter-subtitle-list">
                         <li>
-                            <input type="checkbox" name="swimming-pool" id="filter-swimming-pool" checked>
-                            <label for="filter-swimming-pool">Бассейн</label>
+                            <input type="checkbox" name="pool" id="filter-pool" checked>
+                            <label for="filter-pool">Бассейн</label>
                         </li>
                         <li>
                             <input type="checkbox" name="parking" id="filter-parking">
@@ -52,9 +55,9 @@
                     </ul>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Тип жилья:</legend>
-                    <ul>
+                <fieldset class="housing">
+                    <legend class="filter-subtitle">Тип жилья:</legend>
+                    <ul class="filter-subtitle-list">
                         <li>
                             <input type="checkbox" name="hotel" id="filter-hotel" checked>
                             <label for="filter-hotel">Гостиница</label>
@@ -70,129 +73,127 @@
                     </ul>
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="price">
                     <legend>Стоимость в сутки (р):</legend>
                         <label>от<input type="text" value="0" disabled></label>
                         <label>до<input type="text" value="3000" disabled></label>
-                    <!--ползунок
+
                      <input type="range" name="range" min="1" max="3000" step="1" value="2400" />
-                    -->
+
                 </fieldset>
-                <input type="submit" value="Показать">
+                <input class="btn" type="submit" value="Показать">
             </form>
         </section>
 
-        <section>
+        <section class="result-container">
             <h2>Результаты поиска</h2>
-             <ul>
-                <li>Найдено: 3</li>
-                <li>Сортировка:</li>
-                <li>По цене</li>
-                <li>По типу</li>
-                <li>По рейтингу</li>
+             <ul class="result-list">
+                <li class="result-item-title">Найдено: 3</li>
+                <li class="result-item">Сортировка:</li>
+                <li class="result-item-list1">По цене</li>
+                <li class="result-item-list2">По типу</li>
+                <li class="result-item-list3">По рейтингу</li>
                 <!--стрелки вниз-вверх-->
             </ul>
         </section>
-        <article>
-            <ul>
-                <li>
-                    <a href="blank.html"></a>
-                        <h3>Amara Resort & Spa</h3>
-                        <p>
-                        <img src="img/hotels/Layer 21.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
+        <article class="found">
+            <h2>Результаты поиска</h2>
+            <ul class="found-list">
+                <li class="found-item">
+                    <a href="blank.html" class="found-item-house">Amara Resort & Spa</a>
+                        <p class="found-item-image">
+                        <img src="img/hotels/Layer-21.jpg" width="135" height="90" alt="Гостиница Amara Resort & Spa">
                         </p>
-                        <p>
-                            Гостинница
+                        <p class="found-item-title">
+                            Гостиница
                         </p>
-                        <p>
+                        <p class="found-item-price">
                             от 4000 р.
                         </p>
 
-                        <a href="blank.html">Подробнее</a>
-                        <button type="button">Забронировать</button>
+                        <a class="details" href="blank.html">Подробнее</a>
+                        <a class="reserve" href="blank.html">Забронировать</a>
 
                         <p>Рейтинг</p>
                         <!--4 звезды-->
-                        <span>Рейтинг: 8,5</span>
+                        <span class="found-item-rating">Рейтинг: 8,5</span>
                 </li>
 
-                <li>
-                    <a href="blank.html"></a>
-                        <h3>Desert Quail Inn</h3>
-                        <p>
-                        <img src="img/hotels/Layer 89 copy.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
+                <li class="found-item">
+                    <a href="blank.html" class="found-item-house">Desert Quail Inn</a>
+                        <p class="found-item-image">
+                        <img src="img/hotels/Layer-89.jpg" width="135" height="90" alt="Мотель Desert Quail Inn">
                         </p>
-                        <p>
+                        <p class="found-item-title">
                             Мотель
                         </p>
-                        <p>
+                        <p class="found-item-price">
                             от 3000 р.
                         </p>
 
-                        <a href="blank.html">Подробнее</a>
-                        <button type="button">Забронировать</button>
+                        <a class="details" href="blank.html">Подробнее</a>
+                        <a class="reserve" href="blank.html">Забронировать</a>
 
                         <p>Рейтинг</p>
                         <!--3 звезды-->
-                        <span>Рейтинг: 8,9</span>
+                        <span class="found-item-rating">Рейтинг: 8,9</span>
                 </li>
 
-                <li>
-                    <a href="blank.html"></a>
-                        <h3>Villas at Poco Diablo</h3>
-                        <p>
+                <li class="found-item">
+                    <a href="blank.html" class="found-item-house">Villas at Poco Diablo</a>
+                        <p class="found-item-image">
                         <img src="img/hotels/Rectangle.jpg" width="135" height="90" alt="Апартаменты Villas at Poco Diablo">
                         </p>
-                        <p>
+                        <p class="found-item-title">
                             Апартаменты
                         </p>
-                        <p>
+                        <p class="found-item-price">
                             от 2000 р.
                         </p>
 
-                        <a href="blank.html">Подробнее</a>
-                        <button type="button">Забронировать</button>
+                        <a class="details" href="blank.html">Подробнее</a>
+                        <a class="reserve" href="blank.html">Забронировать</a>
 
                         <p>Рейтинг</p>
                         <!--2 звезды-->
-                        <span>Рейтинг: 9,2</span>
+                        <span class="found-item-rating">Рейтинг: 9,2</span>
                 </li>
             </ul>
         </article>
     </main>
 
-    <footer>
-        <section>
+    <footer class="main-footer">
+        <section class="footer-contacts">
             <h3>Контактная информация</h3>
                 <p>#visitSEDONA<br>
-                <a href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
+                <a class="footer-phone" href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
                 </p>
         </section>
 
-        <section>
+        <section class="footer-social">
             <h3>Мы в соцсетях</h3>
-            <div>
-                <a href="blank.html" alt="Ссылка на страницу в Twitter">Твиттер
-                    <img src="img/icons/twitter.svg" width="17" height="16" alt=""></a>
+            <div class="twitter">
+                <a class="social-button" href="blank.html">Твиттер
+                    <img src="img/icons/twitter.svg" width="17" height="16" alt="Ссылка на страницу в Twitter"></a>
             </div>
 
-            <div>
-                <a href="blank.html" alt="Ссылка на страницу в Facebook">Фейсбук
-                    <img src="img/icons/fb.svg" width="12" height="22" alt=""></a>
+            <div class="fasebook">
+                <a class="social-button" href="blank.html">Фейсбук
+                    <img src="img/icons/fb.svg" width="12" height="22" alt="Ссылка на страницу в Facebook"></a>
             </div>
 
-            <div>
-                <a href="blank.html" alt="Ссылка на страницу в YouTube">Ютуб
-                    <img src="img/icons/youtube.svg" width="20" height="16" alt=""></a>
+            <div class="youtube">
+                <a class="social-button" href="blank.html">Ютуб
+                    <img src="img/icons/youtube.svg" width="20" height="16" alt="Ссылка на страницу в YouTube"></a>
             </div>
-
-        <section>
-            <img src="img/icons/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTML Academy">
-            <p>
-                Website by
-                <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a>
-            </p>
         </section>
+
+        <p class="footer-copyright">
+            Website by
+            <a class="footer-button" href="https://htmlacademy.ru/intensive/htmlcss">
+                <img src="img/icons/logo-htmlacademy.svg" width="115" height="41" alt="Логотип HTML Academy">
+            </a>
+        </p>
     </footer>
 </body>
 </html>
