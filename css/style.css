@@ -43,6 +43,7 @@
     --logo-light: #BDBBBC;
 
     --footer-opacity: rgba(255, 255, 255, 0.9);
+    --result-solid: #E5E5E5;
 }
 
 /*Global*/
@@ -491,18 +492,14 @@ h4 {
     opacity: 0.3;
 }
 
-.footer-button:hover { /*наведение чета не работает*/
-    color: var(--basic-blue);
-}
-
-.footer-button:focus { /*нажатие чета не работает*/
-    color: var(--logo-light);
-}
-
 /*Catalog*/
 
-.site-navigation-link-hotel {
-    color: var(--basic-brown); /*шоб оно работало, когда находишься на этой странице*/
+fieldset {
+    border: none;
+}
+.filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
 }
 
 .filters,
@@ -523,16 +520,17 @@ label {
 .filter-subtitle-list li,
 .found-list li {
     list-style-type: none;
-    font-weight: inherit; /*пункты списка бассейн, парковка т д тянет жирный шрифт, не могу найти чо*/
+    font-weight: inherit;
 }
 
 .filter-subtitle-list:disabled {
     color: var(--special-check);
 }
 
-.result-container,
-.found {
-    background-color: var(--basic-white);
+/*Ползунок*/
+
+.price {
+    display: grid;
 }
 
 .btn,
@@ -542,9 +540,49 @@ label {
     border-color: var(--basic-white);
 }
 
+.btn {
+    background: transparent;
+    width: 137px;
+}
+
 .btn:focus { /*нажатие*/
     color: var(--basic-black);
     background-color: var(--basic-white);
+}
+
+/*Результаты*/
+
+.result-list {
+    font-size: 12px;
+    line-height: 18px;
+    display: grid;
+    grid-template-columns: 190px 121px 89px 81px 109px 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.result-container {
+    min-height: 86px;
+}
+.result-container,
+.found {
+    background-color: var(--basic-white);
+}
+
+.result-item-title {
+    padding-left: 73px;
+}
+
+.result-item {
+    padding-left: 46px;
+}
+
+.result-item-list2 {
+    padding-left: 32px;
+}
+
+.result-item-list3 {
+    padding-left: 33px;
 }
 
 .result-item-title,
@@ -557,13 +595,13 @@ label {
 
 .result-item-list1 {
     color: var(--basic-blue);
+    padding-left: 40px;
 }
 
 .result-item-list2,
 .result-item-list3 {
     color: var(--basic-black);
     opacity: 0.3;
-    border-bottom: 1px dashed var(--basic-blue);
 }
 
 .result-item-list3:hover {
@@ -580,6 +618,53 @@ label {
 }
 
 /*Гостинницы*/
+
+.found {
+}
+
+.found-item {
+    border-bottom: 1px solid var(--result-solid);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 4fr;
+}
+
+.found-item-image {
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+    outline: 2px solid rgba(255, 0, 0);
+}
+.found-item-house {
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;
+    outline: 2px solid rgba(255, 0, 0);
+}
+.found-item-title {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    outline: 2px solid rgba(255, 0, 0);
+}
+.found-item-price {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    outline: 2px solid rgba(255, 0, 0);
+}
+.details {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    outline: 2px solid rgba(255, 0, 0);
+}
+.reserve {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+    outline: 2px solid rgba(255, 0, 0);
+}
+.found-item-rating {
+    grid-row: 3 / 4;
+    grid-column: 4 / 5;
+    outline: 2px solid rgba(255, 0, 0);
+    text-align: right;
+}
 
 .found-item-house:hover {
     color: var(--basic-blue);
