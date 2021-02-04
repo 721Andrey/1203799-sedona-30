@@ -59,7 +59,8 @@ body {
     font-weight: normal;
     color: var(--basic-text);
     text-transform: uppercase;
-    background-color: var(--basic-light);
+    background-color: var(--basic-white);
+    box-shadow: 0px 5px 15px rgba(0, 1, 1, 0.2) center;
 
     min-height: 100%;
     display: grid;
@@ -72,7 +73,7 @@ body.page-body {
     background-image: /*url("../img/background/shape.svg"),*/
     url("../img/background/background-photo-index.jpg");
     background-color: var(--basic-light);
-    background-position: top center;
+    background-position: 110px 0;
     background-repeat: no-repeat;
 
 }
@@ -80,7 +81,7 @@ body.page-body {
 body.second-page-body {
     background-image: url("../img/background/background-photo-catalog.jpg");
     background-color: var(--basic-light);
-    background-position: top center;
+    background-position: 110px 0;
     background-repeat: no-repeat;
 }
 
@@ -118,7 +119,6 @@ img {
 .main-header-wrapper {
     width: 1200px;
     margin: 0 auto;
-    padding-right: 10px;/*не пойму откуда эти 10 пикселей взялись*/
 }
 
 /*Container главное содержимое*/
@@ -178,33 +178,80 @@ img {
 
 .causes-list,
 .causes-item-list,
-.causes-columns3 {
+.causes-columns-third {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 .causes-item-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    max-height: 330px;
+}
+.causes-item-list li {
+    display: grid;
+    grid-template-columns:  1fr;
+    grid-template-rows: 1fr;
     background-color: var(--basic-white);
     margin: 0;
     padding: 0;
-}
-
-.causes-item-item {
     text-align: center;
 }
 
-.causes-item-item p {
-    width: 291px;
-    margin-bottom: 82px;
-    margin-left: 70px;/*тут наверное для каждого точечно нужно будет задавать*/
+.causes-list-item {
+    justify-content: center;
 }
 
-.causes-item-item h4 {
-    margin-top: 160px;/*сверху присобачить картинки*/
-    margin-left: 30px;/*на глаз))*/
+.home::before {
+    content: '';
+    background-image: url("../img/icons/icon-1.svg");
+    width: 75px;
+    height: 72px;
+    margin-top: 60px;
+    margin-left: 162px;
+    margin-bottom: 28px;
+}
+
+.home p {
+    width: 254px;
+    margin-left: 73px;
+    margin-bottom: 82px;
+}
+
+.food::before {
+    content: '';
+    background-image: url("../img/icons/icon-3.svg");
+    width: 75px;
+    height: 70px;
+    margin-top: 61px;
+    margin-left: 162px;
+}
+
+.food p {
+    width: 297px;
+    margin-left: 51px;
+    margin-bottom: 82px;
+}
+
+.souvenirs::before {
+    content: '';
+    background-image: url("../img/icons/icon-2.svg");
+    width: 64px;
+    height: 77px;
+    margin-top: 55px;
+    margin-left: 168px;
+}
+
+.souvenirs p {
+    width: 269px;
+    margin-left: 66px;
+    margin-bottom: 81px;
+}
+
+.causes-list-item p {
+}
+
+.causes-list-item h4 {
 }
 
 .causes-subtitle-w {
@@ -217,14 +264,14 @@ h4 {
     line-height: 21px;
 }
 
-.causes-columns1 {
+.causes-columns-first {
     display: flex;
     min-height: 256px;
     width: 400px;
     flex-direction: column;
     align-items: center;
 }
-.causes-columns1::after {
+.causes-columns-first::after {
     content: '';
     position: absolute;
     background-image: url("../img/images/image-1.jpg");
@@ -234,12 +281,12 @@ h4 {
     height: 256px;
     left: 510px; /*на глаз*/
 }
-.causes-columns1 h4 {
+.causes-columns-first h4 {
     text-align: center;
     width: 125px;
     margin-top: 47px;
 }
-.causes-columns1 p {
+.causes-columns-first p {
     text-align: center;
     width: 300px;
     margin-top: 23px;
@@ -259,11 +306,11 @@ h4 {
     grid-template-columns: 2fr 1fr;
 }
 
-.causes-item.causes-columns2 {
+.causes-item.causes-columns-second {
     width: 400px;
 }
 
-.causes-item.causes-columns2 h4 {
+.causes-item.causes-columns-second h4 {
     text-align: center;
     width: 150px;
     margin-top: 50px;
@@ -271,62 +318,59 @@ h4 {
     margin-left: 126px;
 }
 
-.causes-item.causes-columns2 p {
+.causes-item.causes-columns-second p {
     text-align: center;
     width: 301px;
     margin-top: 23px;
     margin-left: 50px;
 }
-.causes-item.causes-columns2 span {
+.causes-item.causes-columns-second span {
     margin-left: 175px;
 }
 
-.causes-columns3 {
+.causes-columns-third {
     background-color: var(--special-pale);
 }
 
-.causes-columns1,
-.causes-columns2 {
+.causes-columns-first,
+.causes-columns-second {
     color: var(--basic-white);
     background-color: var(--basic-blue);
     height: 256px;
 }
 
-.causes-item-list2 {
-}
-
-.causes-columns3 .causes-item {
+.causes-columns-third .causes-item {
     text-align: center;
 }
 
-.causes-columns3 {
+.causes-columns-third {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     min-height: 256px;
 }
-.causes-columns3 .causes-item h4 {
+.causes-columns-third .causes-item h4 {
     margin-top: 47px;
     margin-left: 140px;
     width: 119px;
 }
 
-.causes-columns3 .causes-item p {
+.causes-columns-third .causes-item p {
     width: 258px;
     margin-left: 70px;
     margin-top: 24px;
 }
 
-/*.causes-item-item:first-child {
+/*.causes-list-item:first-child {
     background-image: url(../img/icons/icon-1.svg);
     background-repeat: no-repeat;
 }
 
-.causes-item-item:nth-child(2) {
+.causes-list-item:nth-child(2) {
     /*background-image: url(../img/icons/icon-3.svg);
     background-repeat: no-repeat;
 }
 
-.causes-item-item:last-child {
+.causes-list-item:last-child {
     /*background-image: url(../img/icons/icon-2.svg);
     background-repeat: no-repeat;*/
 }
