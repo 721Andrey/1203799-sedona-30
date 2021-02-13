@@ -87,6 +87,11 @@ img {
     width: 1px;
     height: 1px;
     margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    overflow: hidden;
     /*у Вадима Макеева в шорте так было, но после маргина три точки стояло)). еще что-то нужно там?*/
 }
 
@@ -128,7 +133,7 @@ img {
 }
 
 .main-header-logo img {
-    margin-top: 76px;
+    padding-top: 76px;
 }
 
 .main-header-logo-catalog {
@@ -156,6 +161,7 @@ img {
 
 .site-navigation a {
     color: var(--basic-black);
+    display: block;
 }
 
 .site-navigation-link{
@@ -172,13 +178,6 @@ img {
 
 .site-navigation-link:first-child a {
     margin-left: 72px;
-}
-.site-navigation-link:nth-child(2) a {
-    padding-left: 15px;
-}
-
-.site-navigation-link:nth-child(3) a {
-    padding-right: 15px;
 }
 
 .site-navigation-link:last-child a {
@@ -200,17 +199,13 @@ img {
 
 /*Slogan*/
 
-
-.main-content {/*надо тут оно вообще?*/
-min-height: 1314px;
-}
-
-.main-content.slogan-causes {
+.main-content .slogan-causes {
+    min-height: 215px;
     line-height: 26px;
-    min-height: 216px;
 }
 
 .slogan-causes p:first-child {
+    position: absolute;
     color: var(--basic-black);
     font-size: 21px;
     font-weight: bold;
@@ -218,18 +213,19 @@ min-height: 1314px;
     line-height: 26px;
     text-align: center;
     margin-left: 365px;
-    padding-top: 42px;
+    margin-top: 41px;
+}
+
+.slogan-causes p:last-child {
+    position: absolute;
+    line-height: 26px;
+    margin-top: 138px;
+    margin-left: 357px;
 }
 
 /*Causes*/
 
-.slogan-causes p:last-child {
-    line-height: 26px;
-    text-align: center;
-    padding-bottom: 51px;
-}
-
-.causes-list/*наверное лишний класс, он больше не используется*/,
+.main-content ul,
 .causes-item-list,
 .causes-columns-third {
     list-style: none;
@@ -260,14 +256,14 @@ min-height: 1314px;
     background-repeat: no-repeat;
     width: 75px;
     height: 72px;
-    margin-top: 60px;
     margin-left: 162px;
+    margin-top: 60px;
 }
 
 .home p {
     width: 254px;
     margin-left: 73px;
-    margin-bottom: 82px;
+    margin-bottom: 60px;
 }
 
 .food::before {
@@ -277,14 +273,13 @@ min-height: 1314px;
     background-repeat: no-repeat;
     width: 75px;
     height: 70px;
-    margin-top: 61px;
     margin-left: 162px;
+    margin-top: 61px;
 }
 
 .food p {
     width: 297px;
     margin-left: 51px;
-    margin-bottom: 82px;
 }
 
 .souvenirs::before {
@@ -294,8 +289,8 @@ min-height: 1314px;
     background-repeat: no-repeat;
     width: 64px;
     height: 77px;
-    margin-top: 55px;
     margin-left: 168px;
+    margin-top: 55px;
 }
 
 .souvenirs p {
@@ -333,22 +328,29 @@ h4 {
     width: 800px;
     height: 256px;
 }
+.causes-columns-first {
+    position: relative;
+}
+
 .causes-columns-first h4 {
+    position: absolute;
     text-align: center;
     width: 125px;
-    margin-bottom: 25px;
-    margin-top: 47px;
     margin-left: 139px;
+    margin-top: 47px;
 }
 .causes-columns-first p {
+    position: absolute;
     text-align: center;
     width: 300px;
-    margin-top: 23px;
-    margin-left: 52px;
+    margin-left: 51px;
+    margin-top: 159px;
 }
 
 .causes-columns-first span {
+    position: absolute;
     margin-left: 175px;
+    margin-top: 115px;
 }
 
 /* №2 */
@@ -363,6 +365,7 @@ h4 {
 }
 .causes-column-bridg {
     display: grid;
+    position: relative;
     min-height: 256px;
     width: 400px;
     grid-template-columns: 2fr 1fr;
@@ -373,21 +376,25 @@ h4 {
 }
 
 .causes-item.causes-columns-second h4 {
+    position: absolute;
     text-align: center;
     width: 150px;
-    margin-top: 50px;
-    margin-bottom: 25px;
     margin-left: 126px;
+    margin-top: 50px;
 }
 
 .causes-item.causes-columns-second p {
+    position: absolute;
     text-align: center;
     width: 301px;
-    margin-top: 23px;
     margin-left: 50px;
+    margin-top: 162px;
 }
 .causes-item.causes-columns-second span {
-    margin-left: 175px;
+    position: absolute;
+    white-space: nowrap;/*почему-то расплываются черточки*/
+    margin-left: 176px;
+    margin-top: 118px;
 }
 
 /* №3 */
@@ -413,46 +420,73 @@ h4 {
     min-height: 256px;
 }
 .causes-columns-third .causes-item h4 {
-    margin-top: 47px;
+    margin-top: 48px;
     margin-left: 140px;
     width: 119px;
 }
 
 .causes-columns-third .causes-item p {
     width: 258px;
-    margin-left: 70px;
+    margin-left: 71px;
     margin-top: 24px;
 }
 
 /*Search*/
 
+.search {
+    display: flex;
+    flex-direction: column;
+    min-height: 291px;
+    align-items: center;
+}
+
 .search-head {
+    position: absolute;
     font-weight: bold;
     font-size: 30px;
     line-height: 24px;
+    margin-top: 57px;
+    margin-left: 130px;
 }
 
 .search-head-info {
+    display: flex;
+    position: relative;
+    flex-direction: column;
     text-align: center;
     color: var(--basic-black);
     background-color: var(--basic-white);
 }
 
+.search-info {
+    position: absolute;
+    width: 450px;
+    line-height: 24px;
+    margin-top: 113px;
+    margin-left: 60px;
+}
+
 .search-button,
-.find-button {
+.find-button {/*что-то не так со шрифтом на кнопках*/
     color: var(--basic-white);
-    font-weight: bold;
     font-size: 21px;
     line-height: 26px;
-    text-transform: uppercase;
     border: none;
+    font-weight: bold;
 }
+
+.search-button {
+    width: 568px;
+    margin-top: 205px;
+    padding: 30px 0;
+}
+
+/*Форма*/
 
 .search-item input {
     background-color: var(--basic-input);
     border: none;
     font: inherit;
-    text-transform: uppercase;
 }
 
 .search-item label,
@@ -462,27 +496,170 @@ h4 {
     font-size: 14px;
     line-height: 26px;
 }
+/*Форма*/
 
-.search-item:hover input {
+.search-form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 568px;
+    min-height: 395px;
+    left: calc(50% - 568px / 2);
+    background-color: var(--basic-white);
+    box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+}
+
+.search-form .input-form {
+    text-transform: uppercase;
+    padding-left: 13px;
+}
+
+.search-form .search-item {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding-left: 55px;
+    margin: 0;
+    margin-bottom: 27px;
+}
+
+.search-form .search-item:first-child {
+    margin-top: 54px;
+}
+
+.search-item:first-child label {
+    margin-right: 24px;
+}
+
+.search-item:nth-child(2) label {
+    margin-right: 21px;
+}
+
+.search-form .input-form.first {
+    width: 331px;
+    height: 38px;
+}
+
+.search-item .calendar {
+    position: absolute;
+    width: 21px;
+    height: 23px;
+    right: 70px;
+    top: 6px;
+    border: none;
+}
+
+.humans-container {
+    display: flex;
+    align-items: center;
+}
+
+.adult {
+    margin-right: 53px;
+}
+.adult label {
+    margin-right: 40px;
+}
+
+.children label {
+    margin-right: 28px;
+}
+
+.humans-container .less,
+.humans-container .input-form.second,
+.humans-container .more {
+    width: 38px;
+    height: 38px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.humans-container .less {
+    background-image: url("../img/icons/less.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: var(--basic-input);
+    font-size: 0px;
+}
+
+.humans-container .more {
+    content: url("../img/icons/more.svg");
+    background-image: url("../img/icons/more.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: var(--basic-input);
+    font-size: 0px;
+}
+
+.search-item.humans {
+    padding-bottom: 30px;
+}
+/*Кнопка найти*/
+
+.find-button {
+    width: 458px;
+    height: 58px;
+    text-transform: uppercase;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*Состояние кнопок поиска*/
+
+.search-form .input-form.first:hover,
+.humans-container .more:hover,
+.humans-container .less:hover {
     background-color: var(--special-cal);
 }
 
-.search-item:active input {
+.search-form .input-form:focus {
+    outline: 2px solid var(--result-solid);
     background-color: var(--basic-white);
+}
+
+.humans-container .less:hover{
+    background-image: url("../img/icons/less-hover.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.humans-container .less:active {
+    background-image: url("../img/icons/less-active.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.humans-container .more:hover {
+    background-image: url("../img/icons/more-hover.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.humans-container .more:active {
+    background-image: url("../img/icons/more-active.svg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.search-item .calendar:hover{
+    fill: var(--basic-black);
+}
+
+.search-item .calendar:active {
+    fill: var(--basic-blue);
 }
 
 .search-button {
     background-color: var(--basic-brown);
 }
+
 .search-button:hover {
     background-color: var(--basic-brown-active);
 }
+
 .search-button:focus {
     background-color: var(--hover-brown-pressing);
-}
-
-.search-search-form {
-    background-color: var(--basic-white);
 }
 
 .find-button {
@@ -497,27 +674,20 @@ h4 {
     background-color: var(--hover-blue-pressing);
 }
 
-/*Footer*/
-/* Contacts */
 
-.container.main-footer {
-    display: flex;
-    flex-wrap: wrap;
-    line-height: 26px;
-    max-width: 1200px;
-}
+/*Footer
+Contacts*/
+
 .main-footer.index{
     position: relative;
     z-index: 100;
     background-color: var(--footer-opacity);
-    margin-top: -120px;
+    margin-top: -125px;/*не понял откуда 5 пикселей взялись, найти*/
+    height: 120px;
 }
-
-.main-footer .footer-social {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.main-footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .footer-contacts,
@@ -526,19 +696,21 @@ h4 {
     width: 400px;
 }
 
-.footer-contacts {/*криво, доделать*/
-    display: flex;
-    flex-direction: column;
+.footer-contacts {
     width: 400px;
-    height: 120px;
-    text-align: center;
-    justify-content: center;
+    margin: 0;
+    margin-top: 23px;
+
 }
 
-.footer-contacts p:first-child {
+.footer-contacts p {
+    margin: 0;
+    margin-left: 125px;
+    margin-top: 9px;
 }
 
-.footer-phone {
+.footer-contacts span {
+    margin-left: 168px;
 }
 
 .footer-social {
@@ -546,6 +718,7 @@ h4 {
     flex-wrap: wrap;
     width: 400px;
     margin: 0;
+    margin-top: 36px;
     padding: 0;
     align-items: center;
     justify-content: center;
@@ -558,32 +731,26 @@ h4 {
     height: 48px;
     align-items: center;
     justify-content: center;
-    margin-right: 3px;
     margin-left: 3px;
+    margin-right: 3px;
 }
 
 .footer-copyright {
-    display: flex;
     width: 400px;
-    text-align: right;
+    margin: 0;
     align-items: center;
-    justify-content: center;/*нет не центр, доделать*/
-}
-
-.footer-button.copyright {
-    margin-left: 8px;
-    margin-top: 6px;/*на глаз*/
+    justify-content: center;
 }
 
 .footer-contacts,
 .footer-copyright p,
 .footer-phone,
-.footer-contacts p {
+.footer-contacts span {
     color: var(--basic-black);
 }
 
 .footer-phone,
-.footer-contacts p {
+.footer-contacts span {
     font-size: 21px;
     line-height: 26px;
     font-weight: bold;
@@ -594,6 +761,14 @@ h4 {
 .footer-button {
     fill: var(--logo-dark);
     margin-left: 8px;
+    margin-right: 75px;
+}
+
+.footer-copyright {
+    display: flex;
+    width: 400px;
+    margin: 0;
+    margin-top: 34px;
 }
 
 .footer-button:hover path {
@@ -756,12 +931,20 @@ label {
     border-bottom: 1px solid var(--result-solid);
 }
 
+.found-item {
+    position: relative;
+}
 .found-item-image {
+    position: absolute;
     width: 135px;
     height: 90px;
     margin-top: 30px;
-    margin-right: 29px;
     margin-left: 73px;
+}
+
+.found-item-house {
+    position: absolute;
+    margin-left: 237px;
 }
 
 .found-item .found-main {
@@ -770,18 +953,29 @@ label {
     margin-top: 24px;
 }
 
-.found-main p {
+.found-item-price {
     display: flex;
-    margin-top: 7px;
-    width: 179px;/*чуть глаза не лопнули высматривать пиксели*/
+    position: absolute;
+    margin-top: 19px;/*проверить по pp*/
+    margin-left: 237px;
 }
-.found-main .found-item-price {
-    margin-left: auto;
+
+.found-item-price p:first-child {
+    width: 110px;
+}
+
+.found-item-price p:last-child {
+    margin-left: 6px;
 }
 
 .choice {
     display: flex;
+    justify-content: space-between;
+    position: absolute;
     min-height: 27px;
+    width: 258px;
+    margin-top: 69px;
+    margin-left: 237px;
 }
 
 .choice .details {
@@ -796,7 +990,6 @@ label {
     width: 142px;
     justify-content: center;
     align-items: center;
-    margin-left: 6px;
 }
 
 /*Звезды*/
@@ -804,9 +997,7 @@ label {
 .hotel-rating .hotel-stars {
     display: flex;
     flex-direction: row-reverse;
-    width: 110px;
     margin-top: 29px;
-    margin-bottom: 47px;
 }
 
 .hotel-stars img {
@@ -815,6 +1006,26 @@ label {
 
 .hotel-stars img:first-child {
     margin-right: 0;
+}
+
+/*Рейтинг*/
+
+.found-item .hotel-rating {
+    position: relative;
+    width: 110px;
+    margin-right: 73px;
+    margin-left: auto;
+}
+
+.hotel-rating .found-item-rating {
+    background-color: var(--basic-input);
+    color: var(--special-reting);
+    display: flex;
+    width: 110px;
+    height: 27px;
+    margin-top: 47px;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Кнопки гостинниц*/
@@ -855,22 +1066,4 @@ label {
 
 .reserve:active {
     background-color: var(--hover-brown-pressing);
-}
-
-/*Рейтинг*/
-
-.found-item .hotel-rating {
-    width: 110px;
-    margin-right: 73px;
-    margin-left: auto;
-}
-
-.hotel-rating .found-item-rating {
-    background-color: var(--basic-input);
-    color: var(--special-reting);
-    display: flex;
-    width: 110px;
-    height: 27px;
-    justify-content: center;
-    align-items: center;
 }
