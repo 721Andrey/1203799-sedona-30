@@ -24,12 +24,11 @@
     --basic-blue: #81B3D2;
     --basic-brown: #766357;
     --basic-text: #333333;
-    --basic-arrow: #CACACA;
-    --basic-input: #F2F2F2;
-    --basic-blue-active: #669EC0;
-    --hover-blue-pressing: #5496BD;
-    --basic-brown-dark: #604E43;
-    --hover-brown-pressing: #503E33;
+
+    --btn-blue-hover: #669EC0;
+    --btn-blue-active: #5496BD;
+    --btn-brown-hover: #604E43;
+    --btn-brown-active: #503E33;
 
     --special-check: #6A6A6A;
     --special-slider: #ABABAB;
@@ -37,13 +36,17 @@
     --special-pale: #EEEEEE;
     --special-reting: #666666;
     --special-cal: #EBEBEB;
+    --special-arrow: #CACACA;
+    --special-input: #F2F2F2;
+    --special-solid: #E5E5E5;
 
     --logo-dark: #231F20;
     --logo-light: #BDBBBC;
 
+    --wrapper-shadow: rgba(0, 1, 1, 0.2);
     --footer-opacity: rgba(255, 255, 255, 0.9);
     --result-opacity: rgba(0, 0, 0, 0.3);
-    --result-solid: #E5E5E5;
+    --scale-opacity: rgba(255, 255, 255, 0.3);
 }
 
 /*Global*/
@@ -53,10 +56,10 @@
     margin: 0 auto;
     padding: 0;
     background-color: var(--basic-white);
-    box-shadow: 0px 0px 15px 0 rgba(0, 1, 1, 0.2);
+    box-shadow: 0px 0px 15px 0 var(--wrapper-shadow);
 }
 
-body {
+.page-body {
     font-family: "PT Sans", sans-serif;
     font-size: 14px;
     line-height: 21px;
@@ -65,13 +68,16 @@ body {
     text-transform: uppercase;
     margin: 0;
     padding: 0;
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
     align-content: start;
 }
 
-a {
+/*Ссылки*/
+
+.main-navigation a,
+.search-head-info .search-button,
+.footer-contacts .footer-phone,
+.result-block a,
+.found a {
     text-decoration: none;
 }
 
@@ -84,7 +90,6 @@ img {
 
 .visually-hidden {
     position: absolute;
-    clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
     margin: -1px;
@@ -92,8 +97,8 @@ img {
     padding: 0;
     white-space: nowrap;
     clip-path: inset(100%);
+    clip: rect(0 0 0 0);
     overflow: hidden;
-    /*у Вадима Макеева в шорте так было, но после маргина три точки стояло)). еще что-то нужно там?*/
 }
 
 /*Grid*/
@@ -102,11 +107,39 @@ img {
     height: 100%;
 }
 
+.page-body {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    min-height: 100%;
+    align-content: flex-start;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 256px 330px 256px 256px;
+}
+
+.main-footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.filter {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+.found-list {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
 /* Main navigation */
 
 .main-navigation {
     position: relative;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     min-height: 56px;
     line-height: 26px;
@@ -146,7 +179,7 @@ img {
 
 .site-navigation {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     min-height: inherit;
@@ -176,11 +209,13 @@ img {
     text-align: right;
 }
 
-.site-navigation-link:first-child a {
+.site-navigation-link:first-child a,
+.site-navigation-link:nth-of-type(5) a {
     margin-left: 72px;
 }
 
-.site-navigation-link:last-child a {
+.site-navigation-link:last-child a,
+.site-navigation-link:nth-of-type(4) a {
     margin-right: 72px;
 }
 
@@ -189,10 +224,7 @@ img {
     color: var(--basic-blue);
 }
 
-.site-navigation-link a:active {
-    color: var(--basic-brown);
-}
-
+.site-navigation-link a:active,
 .site-navigation-link a:not([href]) {
     color: var(--basic-brown);
 }
@@ -204,29 +236,40 @@ img {
 }
 
 .main-content .slogan-causes {
+    position: relative;
     min-height: 215px;
     line-height: 26px;
 }
 
 .slogan-causes p:first-child {
+    display: flex;/*для тянучести*/
+    flex-wrap: wrap;
     position: absolute;
     color: var(--basic-black);
     font-size: 21px;
     font-weight: bold;
-    width: 470px;
+    width: 100%;
     line-height: 26px;
     text-align: center;
-    margin-left: 365px;
+    justify-content: center;
     margin-top: 42px;
 }
 
 .slogan-causes p:last-child {
+    display: flex;/*для тянучести*/
+    flex-wrap: wrap;
     position: absolute;
+    width: 100%;
     line-height: 26px;
     margin-top: 138px;
-    margin-left: 357px;
+    justify-content: center;
 }
 
+.grid-container {
+    min-height: 1098px;
+    margin: 0;
+    padding: 0;
+}
 /*Causes*/
 
 .main-content ul,
@@ -319,10 +362,8 @@ h4 {
 /* №1 */
 
 .causes-first {
-    display: grid;
+    display: flex;
     min-height: 256px;
-    min-width: 400px;
-    grid-template-columns: 1fr 2fr;
 }
 
 .causes-first::after {
@@ -332,6 +373,7 @@ h4 {
     background-color: var(--basic-white);
     width: 800px;
     height: 256px;
+    margin-left: 400px;
 }
 .causes-columns-first {
     position: relative;
@@ -354,13 +396,20 @@ h4 {
 
 .causes-columns-first span {
     position: absolute;
+    text-align: center;
+    width: 50px;
     margin-left: 175px;
     margin-top: 115px;
+    white-space: nowrap;
 }
 
 /* №2 */
 
-.causes-column-bridg::before {
+.causes-second {
+    display: flex;
+    min-height: 256px;
+}
+.causes-second::before {
     content: '';
     background-image: url("../img/images/image-2.jpg");
     background-repeat: no-repeat;
@@ -368,48 +417,46 @@ h4 {
     width: 800px;
     height: 256px;
 }
+
 .causes-column-bridg {
-    display: grid;
     position: relative;
-    min-height: 256px;
-    grid-template-columns: 2fr 1fr;
 }
 
-.causes-item.causes-columns-second {
-    width: 400px;
-}
-
-.causes-item.causes-columns-second h4 {
+.causes-column-bridg h4 {
     position: absolute;
     text-align: center;
     width: 150px;
-    margin-left: 126px;
     margin-top: 50px;
+    margin-left: 126px;
 }
 
-.causes-item.causes-columns-second p {
+.causes-column-bridg p {
     position: absolute;
     text-align: center;
     width: 301px;
-    margin-left: 50px;
     margin-top: 162px;
+    margin-left: 50px;
 }
-.causes-item.causes-columns-second span {
+
+.causes-column-bridg span {
     position: absolute;
-    margin-left: 176px;
     margin-top: 118px;
+    margin-left: 174px;
+    white-space: nowrap;
 }
 
 /* №3 */
 
 .causes-columns-third {
+    position: relative;
     background-color: var(--special-pale);
     display: flex;
     flex-wrap: wrap;
     min-height: 256px;
+    margin-bottom: 256px;
 }
 
-.causes-columns-first,
+.causes-first,
 .causes-columns-second {
     color: var(--basic-white);
     background-color: var(--basic-blue);
@@ -488,7 +535,7 @@ h4 {
 /*Форма*/
 
 .search-item input {
-    background-color: var(--basic-input);
+    background-color: var(--special-input);
     border: none;
     font: inherit;
 }
@@ -589,7 +636,7 @@ h4 {
     background-image: url("../img/icons/less.svg");
     background-repeat: no-repeat;
     background-position: 50%;
-    background-color: var(--basic-input);
+    background-color: var(--special-input);
     font-size: 0px;
     cursor: pointer;
 }
@@ -599,7 +646,7 @@ h4 {
     background-image: url("../img/icons/more.svg");
     background-repeat: no-repeat;
     background-position: 50%;
-    background-color: var(--basic-input);
+    background-color: var(--special-input);
     font-size: 0px;
     cursor: pointer;
 }
@@ -626,7 +673,7 @@ h4 {
 }
 
 .search-form .input-form:focus {
-    outline: 2px solid var(--result-solid);
+    outline: 2px solid var(--special-solid);
     background-color: var(--basic-white);
 }
 
@@ -675,11 +722,11 @@ h4 {
 }
 
 .search-button:hover {
-    background-color: var(--basic-brown-dark);
+    background-color: var(--btn-brown-hover);
 }
 
 .search-button:active {
-    background-color: var(--hover-brown-pressing);
+    background-color: var(--btn-brown-active);
     color: rgba(255, 255, 255, 0.3);
 }
 
@@ -688,12 +735,19 @@ h4 {
 }
 
 .find-button:hover {
-    background-color: var(--basic-blue-active);
+    background-color: var(--btn-blue-hover);
 }
 
 .find-button:active {
-    background-color: var(--hover-blue-pressing);
-    color: rgba(255, 255, 255, 0.3);
+    background-color: var(--btn-blue-active);
+    color: var(--scale-opacity);
+    outline: none;
+}
+
+/*Карта*/
+
+article {
+    line-height: 0;
 }
 
 
@@ -704,12 +758,10 @@ Contacts*/
     position: relative;
     z-index: 100;
     background-color: var(--footer-opacity);
-    margin-top: -127px;/*не понял откуда 7 пикселей взялись, найти*/
+    margin-top: -120px;
     min-height: 120px;
 }
 .main-footer .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     min-height: 120px;
 }
 
@@ -786,12 +838,13 @@ Contacts*/
     justify-content: center;
 }
 
-.footer-button:hover path {
+.footer-button:hover path,
+.footer-button:focus path {
     fill: var(--basic-blue);
 }
 
-.footer-button:focus path {
-    fill: var(--basic-brown-dark);
+.footer-button:active path {
+    fill: var(--btn-brown-hover);
 }
 
 /* Social button color*/
@@ -800,11 +853,12 @@ Contacts*/
     background-color: var(--basic-blue);
 }
 
-.social-button:hover { /*наведение*/
-    background-color: var(--basic-blue-active);
+.social-button:hover,/*наведение*/
+.social-button:focus{
+    background-color: var(--btn-blue-hover);
 }
-.social-button:focus { /*нажатие*/
-    background-color: var(--hover-blue-pressing);
+.social-button:active { /*нажатие*/
+    background-color: var(--btn-blue-active);
 }
 .social-button:active svg { /*прозрачность*/
     opacity: 0.3;
@@ -818,11 +872,6 @@ fieldset {
 
 .filters {
     min-height: 217px;
-}
-
-.filter {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
 }
 
 .filters,
@@ -947,7 +996,8 @@ label {
 .price-controls input {
     width: 50px;
     margin: 0;
-    color: var(--basic-white);font: inherit;
+    color: var(--basic-white);
+    font: inherit;
     background: none;
     border: none;
 }
@@ -998,7 +1048,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .range-controls .scale {
     height: 2px;
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--scale-opacity);
 }
 
 .range-controls .bar {
@@ -1025,7 +1075,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 5px;
     height: 5px;
     padding: 0;
-    margin-left: -1px;/*для красоты)*/
+    margin-left: -1px;/*для ровности)*/
     margin-top: -12px;
     border: 9px solid var(--basic-white);
     background-color: var(--special-slider);
@@ -1054,6 +1104,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 2px;
     background-color: none;
     font-family: inherit;
+    cursor: pointer;
 }
 
 .btn:focus {
@@ -1070,8 +1121,8 @@ input[type=number]::-webkit-outer-spin-button {
 
 .result-block {
     display: flex;
-    min-height: 86px;
-    border-bottom: 1px solid var(--result-solid);
+    min-height: 85px;
+    border-bottom: 1px solid var(--special-solid);
     padding-left: 73px;
 }
 
@@ -1124,9 +1175,15 @@ input[type=number]::-webkit-outer-spin-button {
     opacity: 1;
 }
 
-.result-item-list-price.active {/*актив потому что он уже выбран*/
+.result-list a:active {
+    color: var(--basic-black);
+    border: none;
+}
+
+.result-item-list-price.current {/*выбран*/
     color: var(--basic-blue);
     border: none;
+    cursor:initial;
 }
 
 /*Сортировка*/
@@ -1142,14 +1199,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .sorting-icon path {
-    fill: var(--basic-arrow);
+    fill: var(--special-arrow);
 }
 
 .sorting-icon:hover path/*наведение*/{
     fill: var(--basic-black);
 }
 
-.sorting-icon.active path,/*актив потому что он уже выбран*/
+.sorting-icon.current path,/*выбран*/
 .sorting-icon:active path{/*нажатие*/
     fill: var(--basic-blue);
 }
@@ -1161,39 +1218,40 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
     padding: 0;
 }
+
 .found-list .found-item {
     display: flex;
-    min-height: 150px;
-    border-bottom: 1px solid var(--result-solid);
+    align-items: center;
+    height: 150px;
+    border-bottom: 1px solid var(--special-solid);
 }
 
 .found-item {
     position: relative;
 }
+
 .found-item-image {
-    position: absolute;
     width: 135px;
     height: 90px;
-    margin-top: 30px;
-    margin-left: 73px;
-}
-
-.found-item-house {
-    position: absolute;
-    margin-left: 237px;
+    padding-left: 73px;
+    margin-right: 29px;
+    object-fit: contain;
 }
 
 .found-item .found-main {
     display: flex;
     flex-direction: column;
-    margin-top: 24px;
+    justify-content: center;
+}
+
+.found-item-house {
+    margin-bottom: 75px;/*по макету криво, криво и сделал)*/
 }
 
 .found-item-price {
     display: flex;
     position: absolute;
-    margin-top: 19px;/*проверить по pp*/
-    margin-left: 237px;
+    margin-bottom: 15px;
 }
 
 .found-item-price p:first-child {
@@ -1210,8 +1268,7 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     min-height: 27px;
     width: 258px;
-    margin-top: 69px;
-    margin-left: 237px;
+    margin-top: 65px;
 }
 
 .choice .details {
@@ -1233,7 +1290,7 @@ input[type=number]::-webkit-outer-spin-button {
 .hotel-rating .hotel-stars {
     display: flex;
     flex-direction: row-reverse;
-    margin-top: 29px;
+    margin-bottom: 47px;
 }
 
 .hotel-stars img {
@@ -1254,14 +1311,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .hotel-rating .found-item-rating {
-    background-color: var(--basic-input);
+    background-color: var(--special-input);
     color: var(--special-reting);
     display: flex;
     width: 110px;
     height: 27px;
-    margin-top: 47px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 /*Кнопки гостинниц*/
@@ -1285,11 +1342,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .details:hover {
-    background-color: var(--basic-blue-active);
+    background-color: var(--btn-blue-hover);
 }
 
 .details:active {
-    background-color: var(--hover-blue-pressing);
+    background-color: var(--btn-blue-active);
 }
 
 .reserve {
@@ -1297,9 +1354,9 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .reserve:hover {
-    background-color: var(--basic-brown-dark);
+    background-color: var(--btn-brown-hover);
 }
 
 .reserve:active {
-    background-color: var(--hover-brown-pressing);
+    background-color: var(--btn-brown-active);
 }
