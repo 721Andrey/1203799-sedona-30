@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /*fonts*/
 
 @font-face {
@@ -56,7 +63,8 @@
     margin: 0 auto;
     padding: 0;
     background-color: var(--basic-white);
-    box-shadow: 0px 0px 15px 0 var(--wrapper-shadow);
+    -webkit-box-shadow: 0px 0px 15px 0 var(--wrapper-shadow);
+            box-shadow: 0px 0px 15px 0 var(--wrapper-shadow);
 }
 
 .page-body {
@@ -68,7 +76,8 @@
     text-transform: uppercase;
     margin: 0;
     padding: 0;
-    align-content: start;
+    -ms-flex-line-pack: start;
+        align-content: start;
 }
 
 /*Ссылки*/
@@ -96,7 +105,8 @@ img {
     border: 0;
     padding: 0;
     white-space: nowrap;
-    clip-path: inset(100%);
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
@@ -108,29 +118,42 @@ img {
 }
 
 .page-body {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: -webkit-min-content 1fr -webkit-min-content;
+    -ms-grid-rows: min-content 1fr min-content;
+    grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
     grid-template-rows: min-content 1fr min-content;
     min-height: 100%;
-    align-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
 }
 
 .grid-container {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 256px 330px 256px 256px;
     grid-template-rows: 256px 330px 256px 256px;
 }
 
 .main-footer .container {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
 }
 
 .filter {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr 2fr;
     grid-template-columns: 1fr 1fr 2fr;
 }
 
 .found-list {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 }
 
@@ -138,9 +161,15 @@ img {
 
 .main-navigation {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     min-height: 56px;
     line-height: 26px;
     font-weight: bold;
@@ -178,15 +207,20 @@ img {
 }
 
 .site-navigation {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin: 0;
     padding: 0;
     min-height: inherit;
     line-height: 26px;
     list-style: none;
     background-color: var(--basic-white);
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .main-navigation .logo {
     position: absolute;
@@ -242,8 +276,11 @@ img {
 }
 
 .slogan-causes p:first-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;/*для тянучести*/
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     position: absolute;
     color: var(--basic-black);
     font-size: 21px;
@@ -251,18 +288,25 @@ img {
     width: 100%;
     line-height: 26px;
     text-align: center;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 42px;
 }
 
 .slogan-causes p:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;/*для тянучести*/
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     position: absolute;
     width: 100%;
     line-height: 26px;
     margin-top: 138px;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .grid-container {
@@ -283,13 +327,21 @@ img {
 /*Жилье еда сувениры*/
 
 .causes-item-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .causes-item-list li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
     background-color: var(--basic-white);
     width: 400px;
@@ -362,6 +414,8 @@ h4 {
 /* №1 */
 
 .causes-first {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-height: 256px;
 }
@@ -406,6 +460,8 @@ h4 {
 /* №2 */
 
 .causes-second {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-height: 256px;
 }
@@ -450,8 +506,11 @@ h4 {
 .causes-columns-third {
     position: relative;
     background-color: var(--special-pale);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     min-height: 256px;
     margin-bottom: 256px;
 }
@@ -483,10 +542,17 @@ h4 {
 /*Search*/
 
 .search {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     min-height: 291px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .search-head {
@@ -499,10 +565,16 @@ h4 {
 }
 
 .search-head-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     position: relative;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: center;
     min-height: 291px;
     color: var(--basic-black);
@@ -524,6 +596,8 @@ h4 {
     line-height: 26px;
     border: none;
     font-weight: bold;
+    text-transform: uppercase;
+    font-family: inherit;
 }
 
 .search-button {
@@ -554,13 +628,19 @@ h4 {
 
 .search-form {
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 568px;
     min-height: 395px;
     left: calc(50% - 568px / 2);
     background-color: var(--basic-white);
-    box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+    -webkit-box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+            box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
 }
 
 .search-form .input-form {
@@ -569,9 +649,13 @@ h4 {
 }
 
 .search-form .search-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding-left: 55px;
     margin: 0;
     margin-bottom: 27px;
@@ -594,6 +678,26 @@ h4 {
     height: 38px;
 }
 
+input.input-form::-webkit-input-placeholder {
+    color: var(--basic-black);
+}
+
+input.input-form::-moz-placeholder {
+    color: var(--basic-black);
+}
+
+input.input-form:-ms-input-placeholder {
+    color: var(--basic-black);
+}
+
+input.input-form::-ms-input-placeholder {
+    color: var(--basic-black);
+}
+
+input.input-form::placeholder {
+    color: var(--basic-black);
+}
+
 .search-item .calendar {
     position: absolute;
     padding: 0;
@@ -606,8 +710,12 @@ h4 {
 }
 
 .humans-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .adult {
@@ -746,6 +854,9 @@ h4 {
 
 /*Карта*/
 
+.map {
+    border: none;
+}
 article {
     line-height: 0;
 }
@@ -788,23 +899,37 @@ Contacts*/
 }
 
 .footer-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     position: relative;
     width: 400px;
     margin: 0;
     padding: 0;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .footer-social .social-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     width: 46px;
     height: 48px;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 0 3px 3px;
 }
 
@@ -831,11 +956,17 @@ Contacts*/
 }
 
 .footer-copyright {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 400px;
     margin: 0;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .footer-button:hover path,
@@ -944,6 +1075,15 @@ label {
     background-image: url("../img/icons/checkbox-off.svg");
 }
 
+.input-checkbox:focus-visible + label {
+    outline: 2px solid;
+    outline-offset: 1px;
+}
+.input-checkbox:-moz-focusring + label {
+    outline: 2px solid;
+    outline-offset: 1px;
+}
+
 .input-checkbox:checked + label::before {
     width: 27px;
     height: 23px;
@@ -962,10 +1102,6 @@ label {
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    /*вот тут не уверен вообще. вадим макеев с ютуба сказал,
-    что так правильно скрывать, чтобы скринридеры
-    видели эти чекбоксы. подожду следующий лайв, там
-    уже правильно научат */
 }
 
 
@@ -1013,12 +1149,18 @@ label {
     padding-left: 65px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     margin: 0;
+}
+
+input[type="number"],/*о теперь работает и в мозиле*/
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -webkit-appearance: none;
+            appearance: none;
+    -moz-appearance: textfield;
 }
 
 .price-controls .max-price {
@@ -1089,10 +1231,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .btn {
-    display: flex;
     text-transform: uppercase;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     color: var(--basic-white);
     background: transparent;
     width: 137px;
@@ -1120,6 +1265,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .result-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-height: 85px;
     border-bottom: 1px solid var(--special-solid);
@@ -1132,6 +1279,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .result-sort {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     font-size: 12px;
     line-height: 18px;
@@ -1139,6 +1288,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .result-sort .result-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0;
     margin: 0;
@@ -1220,14 +1371,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .found-list .found-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 150px;
     border-bottom: 1px solid var(--special-solid);
-}
-
-.found-item {
-    position: relative;
 }
 
 .found-item-image {
@@ -1235,23 +1386,34 @@ input[type=number]::-webkit-outer-spin-button {
     height: 90px;
     padding-left: 73px;
     margin-right: 29px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 
 .found-item .found-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .found-item-house {
-    margin-bottom: 75px;/*по макету криво, криво и сделал)*/
+    position: absolute;
+    width: 250px;
 }
 
 .found-item-price {
-    display: flex;
     position: absolute;
-    margin-bottom: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 30px;
 }
 
 .found-item-price p:first-child {
@@ -1263,33 +1425,54 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .choice {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    position: absolute;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     min-height: 27px;
     width: 258px;
-    margin-top: 65px;
+    margin-top: 70px;
+    margin-bottom: 5px;
 }
 
 .choice .details {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 110px;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .choice .reserve {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 142px;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 /*Звезды*/
 
 .hotel-rating .hotel-stars {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row-reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
     margin-bottom: 47px;
 }
 
@@ -1313,11 +1496,17 @@ input[type=number]::-webkit-outer-spin-button {
 .hotel-rating .found-item-rating {
     background-color: var(--special-input);
     color: var(--special-reting);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 110px;
     height: 27px;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: 10px;
 }
 
