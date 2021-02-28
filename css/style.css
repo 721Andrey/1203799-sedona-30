@@ -26,11 +26,11 @@
 /*Variables*/
 
 :root {
-    --basic-black: #000000;
-    --basic-white: #FFFFFF;
+    --basic-black: #000;
+    --basic-white: #FFF;
     --basic-blue: #81B3D2;
     --basic-brown: #766357;
-    --basic-text: #333333;
+    --basic-text: #333;
 
     --btn-blue-hover: #669EC0;
     --btn-blue-active: #5496BD;
@@ -40,8 +40,8 @@
     --special-check: #6A6A6A;
     --special-slider: #ABABAB;
     --special-restangle: #A9A9A9;
-    --special-pale: #EEEEEE;
-    --special-reting: #666666;
+    --special-pale: #EEE;
+    --special-reting: #666;
     --special-cal: #EBEBEB;
     --special-arrow: #CACACA;
     --special-input: #F2F2F2;
@@ -139,8 +139,8 @@ img {
 .main-footer .container {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[3];
-    grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .filter {
@@ -278,7 +278,7 @@ img {
 .slogan-causes p:first-child {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;/*для тянучести*/
+    display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     position: absolute;
@@ -297,7 +297,7 @@ img {
 .slogan-causes p:last-child {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;/*для тянучести*/
+    display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     position: absolute;
@@ -394,7 +394,7 @@ img {
 }
 
 .souvenirs p {
-    width: 269px;
+    width: 280px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -421,7 +421,7 @@ h4 {
 }
 
 .causes-first::after {
-    content: '';
+    content: "";
     background-image: url("../img/images/image-1.jpg");
     background-repeat: no-repeat;
     background-color: var(--basic-white);
@@ -443,8 +443,7 @@ h4 {
 .causes-columns-first p {
     position: absolute;
     text-align: center;
-    width: 300px;
-    margin-left: 51px;
+    width: 400px;
     margin-top: 159px;
 }
 
@@ -466,7 +465,7 @@ h4 {
     min-height: 256px;
 }
 .causes-second::before {
-    content: '';
+    content: "";
     background-image: url("../img/images/image-2.jpg");
     background-repeat: no-repeat;
     background-color: var(--basic-white);
@@ -481,17 +480,16 @@ h4 {
 .causes-column-bridg h4 {
     position: absolute;
     text-align: center;
-    width: 150px;
+    width: 400px;
     margin-top: 50px;
-    margin-left: 126px;
 }
 
 .causes-column-bridg p {
     position: absolute;
     text-align: center;
-    width: 301px;
+    width: 310px;
     margin-top: 162px;
-    margin-left: 50px;
+    margin-left: 45px;
 }
 
 .causes-column-bridg span {
@@ -513,6 +511,7 @@ h4 {
         flex-wrap: wrap;
     min-height: 256px;
     margin-bottom: 256px;
+    z-index: 100;
 }
 
 .causes-first,
@@ -534,7 +533,7 @@ h4 {
 }
 
 .causes-columns-third .causes-item p {
-    width: 258px;
+    width: 260px;
     margin-left: 71px;
     margin-top: 24px;
 }
@@ -565,6 +564,7 @@ h4 {
 }
 
 .search-head-info {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -577,8 +577,10 @@ h4 {
             flex-direction: column;
     text-align: center;
     min-height: 291px;
+    width: 1200px;
     color: var(--basic-black);
     background-color: var(--basic-white);
+    z-index: 100;
 }
 
 .search-info {
@@ -598,12 +600,20 @@ h4 {
     font-weight: bold;
     text-transform: uppercase;
     font-family: inherit;
+    outline: none;
+}
+
+.search-button:not(:focus),
+.find-button:not(:focus) {
+    outline: none;
 }
 
 .search-button {
     width: 568px;
     margin-top: 204px;
+    margin-left: calc(50% - 568px / 2);
     padding: 30px 0;
+    cursor: pointer;
 }
 
 /*Форма*/
@@ -620,10 +630,6 @@ h4 {
     font-weight: bold;
     font-size: 14px;
     line-height: 26px;
-}
-
-.position-form {
-    position: relative;
 }
 
 .search-form {
@@ -702,8 +708,8 @@ input.input-form::placeholder {
     position: absolute;
     padding: 0;
     font-size: 0;
-    right: 70px;
-    top: 6px;
+    right: 65px;
+    top: 8px;
     border: none;
     cursor: pointer;
     outline: none;
@@ -729,9 +735,11 @@ input.input-form::placeholder {
     margin-right: 28px;
 }
 
-.humans-container .less,
+.humans-container .adult-less,
+.humans-container .children-less,
 .humans-container .input-form.second,
-.humans-container .more {
+.humans-container .adult-more,
+.humans-container .children-more {
     width: 38px;
     height: 38px;
     border: none;
@@ -740,7 +748,8 @@ input.input-form::placeholder {
     text-align: center;
 }
 
-.humans-container .less {
+.humans-container .adult-less,
+.humans-container .children-less {
     background-image: url("../img/icons/less.svg");
     background-repeat: no-repeat;
     background-position: 50%;
@@ -749,7 +758,8 @@ input.input-form::placeholder {
     cursor: pointer;
 }
 
-.humans-container .more {
+.humans-container .adult-more,
+.humans-container .children-more {
     content: url("../img/icons/more.svg");
     background-image: url("../img/icons/more.svg");
     background-repeat: no-repeat;
@@ -762,21 +772,25 @@ input.input-form::placeholder {
 .search-item.humans {
     padding-bottom: 28px;
 }
+
 /*Кнопка найти*/
 
 .find-button {
     width: 458px;
     height: 58px;
     text-transform: uppercase;
-    margin-right: auto;
-    margin-left: auto;
+    -webkit-transform: translateX(55px);
+        -ms-transform: translateX(55px);
+            transform: translateX(55px);
     cursor: pointer;
 }
 /*Состояние кнопок поиска*/
 
 .search-form .input-form.first:hover,
-.humans-container .more:hover,
-.humans-container .less:hover {
+.humans-container .adult-more:hover,
+.humans-container .children-more:hover,
+.humans-container .adult-less:hover,
+.humans-container .children-less:hover {
     background-color: var(--special-cal);
 }
 
@@ -785,25 +799,29 @@ input.input-form::placeholder {
     background-color: var(--basic-white);
 }
 
-.humans-container .less:hover{
+.humans-container .adult-less:hover,
+.humans-container .children-less:hover {
     background-image: url("../img/icons/less-hover.svg");
     background-repeat: no-repeat;
     background-position: 50%;
 }
 
-.humans-container .less:active {
+.humans-container .adult-less:active,
+.humans-container .children-less:active {
     background-image: url("../img/icons/less-active.svg");
     background-repeat: no-repeat;
     background-position: 50%;
 }
 
-.humans-container .more:hover {
+.humans-container .adult-more:hover,
+.humans-container .children-more:hover {
     background-image: url("../img/icons/more-hover.svg");
     background-repeat: no-repeat;
     background-position: 50%;
 }
 
-.humans-container .more:active {
+.humans-container .adult-more:active,
+.humans-container .children-more:active {
     background-image: url("../img/icons/more-active.svg");
     background-repeat: no-repeat;
     background-position: 50%;
@@ -857,7 +875,9 @@ input.input-form::placeholder {
 .map {
     border: none;
 }
+
 article {
+    position: relative;
     line-height: 0;
 }
 
@@ -867,7 +887,6 @@ Contacts*/
 
 .main-footer.index{
     position: relative;
-    z-index: 100;
     background-color: var(--footer-opacity);
     margin-top: -120px;
     min-height: 120px;
@@ -984,14 +1003,14 @@ Contacts*/
     background-color: var(--basic-blue);
 }
 
-.social-button:hover,/*наведение*/
+.social-button:hover,
 .social-button:focus{
     background-color: var(--btn-blue-hover);
 }
-.social-button:active { /*нажатие*/
+.social-button:active {
     background-color: var(--btn-blue-active);
 }
-.social-button:active svg { /*прозрачность*/
+.social-button:active svg {
     opacity: 0.3;
 }
 
@@ -1155,7 +1174,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-input[type="number"],/*о теперь работает и в мозиле*/
+input[type="number"],
 input[type="number"]:hover,
 input[type="number"]:focus {
     -webkit-appearance: none;
@@ -1217,7 +1236,7 @@ input[type="number"]:focus {
     width: 5px;
     height: 5px;
     padding: 0;
-    margin-left: -1px;/*для ровности)*/
+    margin-left: -1px;
     margin-top: -12px;
     border: 9px solid var(--basic-white);
     background-color: var(--special-slider);
@@ -1247,7 +1266,7 @@ input[type="number"]:focus {
     outline: none;
     border: 2px solid var(--basic-white);
     border-radius: 2px;
-    background-color: none;
+    background-color: transparent;
     font-family: inherit;
     cursor: pointer;
 }
@@ -1353,12 +1372,12 @@ input[type="number"]:focus {
     fill: var(--special-arrow);
 }
 
-.sorting-icon:hover path/*наведение*/{
+.sorting-icon:hover path {
     fill: var(--basic-black);
 }
 
 .sorting-icon.current path,/*выбран*/
-.sorting-icon:active path{/*нажатие*/
+.sorting-icon:active path{
     fill: var(--basic-blue);
 }
 
@@ -1548,4 +1567,75 @@ input[type="number"]:focus {
 
 .reserve:active {
     background-color: var(--btn-brown-active);
+}
+
+/* Modal */
+
+.modal-hide {
+    position: relative;
+    display: block;
+    animation-timing-function: linear;
+    animation-name: exit;
+    animation-duration: 0.5s;
+    z-index: 30;
+}
+
+.modal-error {
+    animation: shake 0.6s;
+  }
+
+.modal-show {
+    display: none;
+}
+
+/* Animation */
+
+@-webkit-keyframes exit {
+    0% {
+      -webkit-transform: translateY(-395px);
+              transform: translateY(-395px);
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+@keyframes exit {
+    0% {
+        -webkit-transform: translateY(-395px);
+                transform: translateY(-395px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(10px);
+    }
 }
