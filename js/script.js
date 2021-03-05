@@ -11,14 +11,34 @@ let adultsButtonPlus = modal.querySelector(".adult-more");//+взрослый
 let childrenButtonMinus = modal.querySelector(".children-less");//-детёныш
 let childrenButtonPlus = modal.querySelector(".children-more");//+детёныш
 
-modalButton.onclick = function () {
+
+let isStorageSupport = true;
+let storage = "";
+
+try {
+    adultStorage = localStorage.getItem("adults");//запомнить кол-во взрослых
+    childrenStorage = localStorage.getItem("childrens");//запомнить кол-во детенышей
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+
+modalButton.addEventListener("click", function (evt) {
+    evt.preventDefault();
     console.log("Кнопка нажата");//при клике вывести сообщение
 
     modal.classList.toggle("modal-show");//убрать 'показать'
     modal.classList.toggle("modal-hide");//убрать 'скрыть'
     modal.classList.remove("modal-error");//ошибка
-    modalArrival.focus();//фокус на дату
-};
+
+    if (adultStorage && childrenStorage) {//вспомнить всё
+        numberOfAdults.value = adultStorage;
+        numberOfChildrens.value = childrenStorage;
+        modalArrival.focus();//фокус на дату заеда
+    } else {
+        modalDeparture.focus();//фокус на дату выезда
+    }
+});
 
 modalForm.addEventListener("submit", function (evt) {//отправка данных
     if (!modalArrival.value || !modalDeparture.value) {//если дата не заполнена
@@ -26,6 +46,11 @@ modalForm.addEventListener("submit", function (evt) {//отправка данн
         modal.classList.remove("modal-error");
         modal.offsetWidth = modal.offsetWidth;
         modal.classList.add("modal-error");
+    } else {
+        if (isStorageSupport) {
+            localStorage.setItem("adults", numberOfAdults.value);
+            localStorage.setItem("childrens", numberOfChildrens.value);
+        }
     }
 });
 
@@ -34,6 +59,7 @@ window.addEventListener("keydown", function (evt) {//реакция на эск�
       if (modal.classList.contains("modal-show")) {
         evt.preventDefault();
         modal.classList.remove("modal-show");
+        modal.classList.remove("modal-error");
       }
     }
   });

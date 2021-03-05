@@ -189,6 +189,7 @@ img {
 
 .main-header-logo {
     min-height: 509px;
+    background-color: var(--basic-white);
     background-image: url("../img/background/shape.svg"),
     url("../img/background/background-photo-index.jpg");
     background-repeat: no-repeat;
@@ -202,8 +203,7 @@ img {
 
 .main-header-logo-catalog {
     min-height: 217px;
-    background-image: url("../img/background/background-photo-catalog.jpg");
-    background-repeat: no-repeat;
+    background: var(--basic-white) url("../img/background/background-photo-catalog.jpg") no-repeat;
 }
 
 .site-navigation {
@@ -350,10 +350,9 @@ img {
 }
 
 .home::before {
-    content: '';
+    content: "";
     position: absolute;
-    background-image: url("../img/icons/icon-1.svg");
-    background-repeat: no-repeat;
+    background: var(--basic-white) url("../img/icons/icon-1.svg") no-repeat;
     width: 75px;
     height: 72px;
     margin-left: 162px;
@@ -367,10 +366,9 @@ img {
 }
 
 .food::before {
-    content: '';
+    content: "";
     position: absolute;
-    background-image: url("../img/icons/icon-3.svg");
-    background-repeat: no-repeat;
+    background: var(--basic-white) url("../img/icons/icon-3.svg") no-repeat;
     width: 75px;
     height: 70px;
     margin-left: 162px;
@@ -383,10 +381,9 @@ img {
 }
 
 .souvenirs::before {
-    content: '';
+    content: "";
     position: absolute;
-    background-image: url("../img/icons/icon-2.svg");
-    background-repeat: no-repeat;
+    background: var(--basic-white) url("../img/icons/icon-2.svg") no-repeat;
     width: 64px;
     height: 77px;
     margin-left: 168px;
@@ -422,9 +419,7 @@ h4 {
 
 .causes-first::after {
     content: "";
-    background-image: url("../img/images/image-1.jpg");
-    background-repeat: no-repeat;
-    background-color: var(--basic-white);
+    background: var(--basic-white) url("../img/images/image-1.jpg") no-repeat;
     width: 800px;
     height: 256px;
     margin-left: 400px;
@@ -436,8 +431,7 @@ h4 {
 .causes-columns-first h4 {
     position: absolute;
     text-align: center;
-    width: 125px;
-    margin-left: 139px;
+    width: 400px;
     margin-top: 47px;
 }
 .causes-columns-first p {
@@ -466,9 +460,7 @@ h4 {
 }
 .causes-second::before {
     content: "";
-    background-image: url("../img/images/image-2.jpg");
-    background-repeat: no-repeat;
-    background-color: var(--basic-white);
+    background: var(--basic-white) url("../img/images/image-2.jpg") no-repeat;
     width: 800px;
     height: 256px;
 }
@@ -750,10 +742,7 @@ input.input-form::placeholder {
 
 .humans-container .adult-less,
 .humans-container .children-less {
-    background-image: url("../img/icons/less.svg");
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-color: var(--special-input);
+    background: var(--special-input) url("../img/icons/less.svg") 50% no-repeat;
     font-size: 0px;
     cursor: pointer;
 }
@@ -761,10 +750,7 @@ input.input-form::placeholder {
 .humans-container .adult-more,
 .humans-container .children-more {
     content: url("../img/icons/more.svg");
-    background-image: url("../img/icons/more.svg");
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-color: var(--special-input);
+    background: var(--special-input) url("../img/icons/more.svg") 50% no-repeat;
     font-size: 0px;
     cursor: pointer;
 }
@@ -801,30 +787,22 @@ input.input-form::placeholder {
 
 .humans-container .adult-less:hover,
 .humans-container .children-less:hover {
-    background-image: url("../img/icons/less-hover.svg");
-    background-repeat: no-repeat;
-    background-position: 50%;
+    background: var(--basic-white) url("../img/icons/less-hover.svg") 50% no-repeat;
 }
 
 .humans-container .adult-less:active,
 .humans-container .children-less:active {
-    background-image: url("../img/icons/less-active.svg");
-    background-repeat: no-repeat;
-    background-position: 50%;
+    background: var(--basic-white) url("../img/icons/less-active.svg") 50% no-repeat;
 }
 
 .humans-container .adult-more:hover,
 .humans-container .children-more:hover {
-    background-image: url("../img/icons/more-hover.svg");
-    background-repeat: no-repeat;
-    background-position: 50%;
+    background: var(--basic-white) url("../img/icons/more-hover.svg") 50% no-repeat;
 }
 
 .humans-container .adult-more:active,
 .humans-container .children-more:active {
-    background-image: url("../img/icons/more-active.svg");
-    background-repeat: no-repeat;
-    background-position: 50%;
+    background: var(--basic-white) url("../img/icons/more-active.svg") 50% no-repeat;
 }
 
 .calendar-svg:hover path {
@@ -853,7 +831,7 @@ input.input-form::placeholder {
 
 .search-button:active {
     background-color: var(--btn-brown-active);
-    color: rgba(255, 255, 255, 0.3);
+    color: var(--scale-opacity);
 }
 
 .find-button {
@@ -1087,11 +1065,11 @@ label {
 
 .filter-subtitle-item label::before {
     position: absolute;
-    content: '';
+    content: "";
     width: 23px;
     height: 23px;
     margin-left: -38px;
-    background-image: url("../img/icons/checkbox-off.svg");
+    background: transparent url("../img/icons/checkbox-off.svg");
 }
 
 .input-checkbox:focus-visible + label {
@@ -1106,8 +1084,7 @@ label {
 .input-checkbox:checked + label::before {
     width: 27px;
     height: 23px;
-    background-image: url("../img/icons/checkbox-on.svg");
-    background-repeat: no-repeat;
+    background: url("../img/icons/checkbox-on.svg") no-repeat;
 }
 
 .input-checkbox:checked:disabled + label::before {
@@ -1159,6 +1136,7 @@ label {
 
 .price-controls label {
     display: inline-block;
+    vertical-align: middle;
     font-size: 14px;
     line-height: 21px;
     margin-top: 6px;
@@ -1574,14 +1552,18 @@ input[type="number"]:focus {
 .modal-hide {
     position: relative;
     display: block;
-    animation-timing-function: linear;
-    animation-name: exit;
-    animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-name: exit;
+            animation-name: exit;
+    -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
     z-index: 30;
 }
 
 .modal-error {
-    animation: shake 0.6s;
+    -webkit-animation: shake 0.6s;
+            animation: shake 0.6s;
   }
 
 .modal-show {
@@ -1618,10 +1600,11 @@ input[type="number"]:focus {
     }
 }
 
-@keyframes shake {
+@-webkit-keyframes shake {
     0%,
     100% {
-      transform: translateX(0);
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
     }
 
     10%,
@@ -1629,13 +1612,40 @@ input[type="number"]:focus {
     50%,
     70%,
     90% {
-      transform: translateX(-10px);
+      -webkit-transform: translateX(-10px);
+              transform: translateX(-10px);
     }
 
     20%,
     40%,
     60%,
     80% {
-      transform: translateX(10px);
+      -webkit-transform: translateX(10px);
+              transform: translateX(10px);
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translateX(-10px);
+              transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translateX(10px);
+              transform: translateX(10px);
     }
 }
