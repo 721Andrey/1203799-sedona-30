@@ -34,9 +34,9 @@ modalButton.addEventListener("click", function (evt) {
     if (adultStorage && childrenStorage) {//вспомнить всё
         numberOfAdults.value = adultStorage;
         numberOfChildrens.value = childrenStorage;
-        modalArrival.focus();//фокус на дату заеда
-    } else {
         modalDeparture.focus();//фокус на дату выезда
+    } else {
+        modalArrival.focus();//фокус на дату заеда
     }
 });
 
