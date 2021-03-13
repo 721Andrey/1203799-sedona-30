@@ -5,7 +5,7 @@
   <title>Седона</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap&subset=cyrillic,latin">
   <link href="css/normalize.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/css-min.css" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="favicon/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple.png">
@@ -53,26 +53,26 @@
                                 <li class="filter-subtitle-item">
                                     <input class="input-checkbox" type="checkbox" name="wi-fi" id="filter-wi-fi">
                                     <label for="filter-wi-fi">Wi-Fi</label>
-                                  </li>
+                                </li>
                              </ul>
                         </fieldset>
 
                         <fieldset class="housing">
-                                <legend class="filter-subtitle">Тип жилья:</legend>
-                                <ul class="filter-subtitle-list">
-                                    <li class="filter-subtitle-item">
-                                        <input class="input-checkbox" type="checkbox" name="hotel" id="filter-hotel" checked>
-                                        <label for="filter-hotel">Гостиница</label>
-                                    </li>
-                                    <li class="filter-subtitle-item">
-                                        <input class="input-checkbox" type="checkbox" name="motel" id="filter-motel" checked>
-                                        <label for="filter-motel">Мотель</label>
-                                    </li>
-                                    <li class="filter-subtitle-item">
-                                        <input class="input-checkbox" type="checkbox" name="apartments" id="filter-apartments" checked>
-                                        <label for="filter-apartments">Апартаменты</label>
-                                    </li>
-                                </ul>
+                            <legend class="filter-subtitle">Тип жилья:</legend>
+                            <ul class="filter-subtitle-list">
+                                <li class="filter-subtitle-item">
+                                    <input class="input-checkbox" type="checkbox" name="hotel" id="filter-hotel" checked>
+                                    <label for="filter-hotel">Гостиница</label>
+                                </li>
+                                <li class="filter-subtitle-item">
+                                    <input class="input-checkbox" type="checkbox" name="motel" id="filter-motel" checked>
+                                    <label for="filter-motel">Мотель</label>
+                                </li>
+                                <li class="filter-subtitle-item">
+                                    <input class="input-checkbox" type="checkbox" name="apartments" id="filter-apartments" checked>
+                                    <label for="filter-apartments">Апартаменты</label>
+                                </li>
+                            </ul>
                         </fieldset>
 
                         <fieldset class="price">
@@ -91,14 +91,12 @@
                                 <div class="range-controls">
                                     <div class="scale">
                                         <div class="bar" style="
-                                        width: 30%;
-                                        margin-left: 20%;">
+                                        width: 80%;
+                                        margin-left: 0;">
                                         </div>
                                     </div>
-                                    <div class="toggle toggle-min" tabindex="0" style="left: 20%">
-                                    </div>
-                                    <div class="toggle toggle-max" tabindex="0" style="left: 50%">
-                                    </div>
+                                    <div class="toggle toggle-min" tabindex="0" style="left: 0"></div>
+                                    <div class="toggle toggle-max" tabindex="0" style="left: 80%"></div>
                                 </div>
                             </div>
 
@@ -237,10 +235,10 @@
             <div class="container">
                 <section class="footer-contacts">
                     <h3 class="visually-hidden">Контактная информация</h3>
-                    <span>#visitSEDONA</span>
-                    <p>
-                        <a class="footer-phone" href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a>
-                    </p>
+                    <div class="footer-visit">
+                        <span>#visitSEDONA</span>
+                        <p><a class="footer-phone" href="tel:+74956660166">ТЕЛ: +7(495) 666-01-66</a></p>
+                    </div>
                 </section>
 
                 <section class="footer-social">
