@@ -22,13 +22,13 @@ try {
     isStorageSupport = false;
   }
 
-
+modal.classList.add("modal-hide");
 modalButton.addEventListener("click", function (evt) {
     evt.preventDefault();
     console.log("Кнопка нажата");//при клике вывести сообщение
 
-    modal.classList.toggle("modal-show");//убрать 'показать'
     modal.classList.toggle("modal-hide");//убрать 'скрыть'
+    modal.classList.toggle("modal-show");//убрать 'показать'
     modal.classList.remove("modal-error");//ошибка
 
     if (adultStorage && childrenStorage) {//вспомнить всё
@@ -56,9 +56,10 @@ modalForm.addEventListener("submit", function (evt) {//отправка данн
 
 window.addEventListener("keydown", function (evt) {//реакция на эскейп
     if (evt.keyCode === 27) {
-      if (modal.classList.contains("modal-show")) {
+      if (modal.classList.contains("modal-hide")) {
         evt.preventDefault();
         modal.classList.remove("modal-show");
+        modal.classList.add("modal-hide");
         modal.classList.remove("modal-error");
       }
     }
